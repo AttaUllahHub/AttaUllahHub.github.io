@@ -2,467 +2,963 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Atta Ullah's Data Science portfolio featuring Python, SQL, Machine Learning, Power BI, and data analytics projects.">
+  <meta name="theme-color" content="#080d1b">
+  <title>Atta Ullah | Data Science Portfolio</title>
 
-    <title>Atta Ullah | Data Science Portfolio</title>
+  <style>
+    :root {
+      --bg: #080d1b;
+      --surface: #10192b;
+      --surface-light: #15223a;
+      --text: #edf3ff;
+      --muted: #a4b2c9;
+      --accent: #60a5fa;
+      --accent-2: #5eead4;
+      --border: rgba(148, 163, 184, 0.18);
+      --radius: 18px;
+      --max-width: 1120px;
+    }
 
-    <meta name="description"
-          content="Atta Ullah's personal portfolio showcasing Data Science, Machine Learning, Data Analytics and Power BI projects.">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #0b1120;
-            color: #e5e7eb;
-            line-height: 1.7;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            background: #111827;
-            position: sticky;
-            top: 0;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .logo {
-            color: #38bdf8;
-            font-size: 23px;
-            font-weight: bold;
-        }
-
-        nav a {
-            color: #e5e7eb;
-            text-decoration: none;
-            margin-left: 18px;
-        }
-
-        nav a:hover {
-            color: #38bdf8;
-        }
-
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 80px 10%;
-        }
-
-        .hero h1 {
-            font-size: clamp(36px, 6vw, 62px);
-            line-height: 1.2;
-            margin: 15px 0;
-        }
-
-        .hero h1 span {
-            color: #38bdf8;
-        }
-
-        .tagline {
-            color: #38bdf8;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        .hero p {
-            max-width: 650px;
-            color: #cbd5e1;
-            margin-bottom: 25px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #0284c7;
-            color: white;
-            padding: 12px 22px;
-            text-decoration: none;
-            border-radius: 6px;
-            margin: 5px 8px 5px 0;
-        }
-
-        .btn:hover {
-            background: #0369a1;
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 1px solid #38bdf8;
-        }
-
-        section {
-            padding: 65px 10%;
-            scroll-margin-top: 80px;
-        }
-
-        section h2 {
-            font-size: 32px;
-            margin-bottom: 25px;
-            color: #38bdf8;
-        }
-
-        .about-text {
-            max-width: 800px;
-            color: #cbd5e1;
-        }
-
-        .skills, .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: #111827;
-            border: 1px solid #263449;
-            padding: 22px;
-            border-radius: 10px;
-        }
-
-        .card h3 {
-            color: #7dd3fc;
-            margin-bottom: 12px;
-        }
-
-        .card p {
-            color: #cbd5e1;
-            margin-bottom: 15px;
-        }
-
-        .skill-tag {
-            display: inline-block;
-            background: #1e293b;
-            color: #bae6fd;
-            padding: 6px 10px;
-            border-radius: 5px;
-            margin: 4px;
-            font-size: 14px;
-        }
-
-        .contact p {
-            margin-bottom: 12px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            background: #111827;
-            color: #94a3b8;
-        }
-
-        @media (max-width: 600px) {
-            nav {
-                padding: 18px 5%;
-            }
-
-            nav a {
-                margin-left: 0;
-                margin-right: 12px;
-            }
-
-            .hero {
-                padding: 65px 7%;
-            }
-
-            section {
-                padding: 50px 7%;
-            }
-        }
-
-        
-/* Professional design improvements */
-
-body {
-    background:
-        radial-gradient(ellipse at top right, #172554 0%, transparent 45%),
-        #0b1120;
-    color: #f1f5f9;
-}
-
-nav {
-    background: rgba(11, 17, 32, 0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(148, 163, 184, 0.15);
-    z-index: 100;
-}
-
-.logo {
-    letter-spacing: -0.5px;
-}
-
-nav a {
-    transition: color 0.25s ease;
-}
-
-.hero {
-    position: relative;
-    overflow: hidden;
-    min-height: 82vh;
-}
-
-.hero h1 {
-    letter-spacing: -2px;
-}
-
-.hero h2 {
-    color: #cbd5e1;
-    font-size: clamp(20px, 3vw, 28px);
-    margin-bottom: 16px;
-}
-
-.hero p:not(.tagline) {
-    font-size: 17px;
-    line-height: 1.9;
-}
-
-section h2 {
-    letter-spacing: -0.7px;
-}
-
-.card {
-    background: rgba(17, 24, 39, 0.85);
-    border: 1px solid #29364b;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    border-color: #38bdf8;
-    box-shadow: 0 14px 35px rgba(14, 165, 233, 0.10);
-}
-
-.btn {
-    font-weight: 600;
-    transition:
-        background 0.2s ease,
-        transform 0.2s ease;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-}
-
-.skill-tag {
-    border: 1px solid #334155;
-}
-
-footer {
-    border-top: 1px solid #263449;
-}
-
-::selection {
-    background: #0284c7;
-    color: white;
-}
-
-@media (prefers-reduced-motion: reduce) {
     html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: auto;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 34px;
+    }
+
+    .eyebrow {
+      color: var(--accent-2);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    h2 {
+      font-size: clamp(1.9rem, 4vw, 2.7rem);
+      line-height: 1.2;
+      margin-top: 8px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 680px;
+      margin-top: 12px;
+    }
+
+    .accent {
+      color: var(--accent);
+    }
+
+    /* Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 13, 27, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 850;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--accent-2);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.91rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--accent-2);
+    }
+
+    .menu-toggle {
+      display: none;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 8px 12px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 570px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 90px 0;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      background: rgba(59, 130, 246, 0.13);
+      filter: blur(85px);
+      right: -100px;
+      top: 30px;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 790px;
+    }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--accent-2);
+      background: rgba(94, 234, 212, 0.08);
+      border: 1px solid rgba(94, 234, 212, 0.22);
+      border-radius: 50px;
+      padding: 7px 14px;
+      font-size: 0.84rem;
+      margin-bottom: 26px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-2);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 5.3rem);
+      line-height: 1.08;
+      letter-spacing: -2.5px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: var(--accent);
+    }
+
+    .hero p {
+      max-width: 660px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin-bottom: 30px;
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 21px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-weight: 750;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #07111f;
+      border-color: var(--accent);
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 32px;
+    }
+
+    .hero-tags span,
+    .tag {
+      color: #c7d8f2;
+      background: var(--surface-light);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 5px 11px;
+      font-size: 0.83rem;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .panel {
+      padding: 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .panel p {
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .focus-list {
+      list-style: none;
+      margin-top: 16px;
+    }
+
+    .focus-list li {
+      padding: 9px 0;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .focus-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .focus-list li::before {
+      content: "▹";
+      color: var(--accent-2);
+      margin-right: 10px;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      padding: 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .skill-card:hover,
+    .project-card:hover {
+      border-color: rgba(96, 165, 250, 0.65);
+      transform: translateY(-4px);
+    }
+
+    .skill-icon {
+      font-size: 1.65rem;
+      margin-bottom: 10px;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 14px;
+      font-size: 1.1rem;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      padding: 27px;
+      min-height: 290px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .project-number {
+      color: var(--accent-2);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+    }
+
+    .project-card h3 {
+      margin: 12px 0 8px;
+      font-size: 1.25rem;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .project-card .tag-list {
+      margin-top: auto;
+      margin-bottom: 20px;
+    }
+
+    .project-link {
+      color: var(--accent);
+      font-weight: 750;
+      align-self: flex-start;
+    }
+
+    .project-link:hover {
+      color: var(--accent-2);
+    }
+
+    .project-note {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 20px;
+    }
+
+    /* Education */
+    .timeline {
+      border-left: 2px solid var(--border);
+      margin-left: 8px;
+      padding-left: 26px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 30px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -34px;
+      top: 8px;
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      border: 3px solid var(--bg);
+      border-radius: 50%;
+    }
+
+    .timeline-item h3 {
+      font-size: 1.15rem;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      margin-top: 5px;
+    }
+
+    .timeline-date {
+      color: var(--accent-2);
+      font-size: 0.87rem;
+      font-weight: 750;
+    }
+
+    /* Contact */
+    .contact-box {
+      padding: clamp(25px, 5vw, 48px);
+      background: linear-gradient(
+        135deg,
+        rgba(96, 165, 250, 0.12),
+        rgba(94, 234, 212, 0.05)
+      );
+      border: 1px solid var(--border);
+      border-radius: 24px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 14px 0 25px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 25px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent-2);
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 850px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        padding: 20px 5%;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 17px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .about-grid,
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .section {
+        padding: 65px 0;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 75px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -1.4px;
+      }
+
+      .about-grid,
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .panel,
+      .skill-card,
+      .project-card {
+        padding: 22px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
         scroll-behavior: auto;
-    }
+      }
 
-    *, *::before, *::after {
-        transition: none !important;
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+      }
     }
-}
-
-    </style>
+  </style>
 </head>
 
 <body>
 
-    <nav>
-        <div class="logo">AttaUllahHub</div>
+  <!-- Navigation -->
+  <header class="navbar">
+    <nav class="container nav-inner" aria-label="Main navigation">
+      <a class="logo" href="#home">Atta<span>Ullah.</span></a>
 
-        <div>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </div>
+      <button class="menu-toggle"
+              id="menu-toggle"
+              aria-label="Toggle navigation"
+              aria-expanded="false"
+              aria-controls="nav-links">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <main>
-        <section class="hero" id="home">
-            <p class="tagline">DATA SCIENCE PORTFOLIO</p>
+  <main>
 
-            <h1>Hello, I'm <span>Atta Ullah</span></h1>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="availability">
+            <span class="status-dot"></span>
+            Data Science Student | Building My Portfolio
+          </div>
 
-            <h2>Data Science Student & Aspiring Data Professional</h2>
+          <h1>
+            Hi, I'm Atta Ullah.
+            <span>Future Data Scientist.</span>
+          </h1>
 
-            <p>
-                I am a Data Science student passionate about Python,
-                Machine Learning, Data Analytics, Data Visualization
-                and Artificial Intelligence. I enjoy turning data
-                into meaningful insights and practical solutions.
-            </p>
+          <p>
+            I'm a Data Science student at Government College University
+            Faisalabad, interested in transforming raw data into meaningful
+            insights through Python, SQL, Machine Learning, and Power BI.
+            I enjoy solving practical problems and building data-driven projects.
+          </p>
 
-            <div>
-                <a href="#projects" class="btn">Explore My Projects</a>
-                <a href="#contact" class="btn btn-outline">Contact Me</a>
-            </div>
-        </section>
-
-        <section id="about">
-            <h2>About Me</h2>
-
-            <p class="about-text">
-                I am pursuing my Bachelor's degree in Data Science
-                at Government College University Faisalabad (GCUF),
-                Pakistan. I am continuously developing my technical
-                and analytical skills through academic projects,
-                practical exercises and independent learning.
-
-                My interests include Machine Learning, Business
-                Intelligence, Computer Vision and Deep Learning.
-                My goal is to build useful, data-driven solutions
-                for real-world industry problems.
-            </p>
-        </section>
-
-        <section id="skills">
-            <h2>Technical Skills</h2>
-
-            <div class="skills">
-                <div class="card">
-                    <h3>Programming</h3>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">R</span>
-                </div>
-
-                <div class="card">
-                    <h3>Data Analysis</h3>
-                    <span class="skill-tag">Pandas</span>
-                    <span class="skill-tag">NumPy</span>
-                    <span class="skill-tag">Excel</span>
-                    <span class="skill-tag">Statistics</span>
-                </div>
-
-                <div class="card">
-                    <h3>Machine Learning</h3>
-                    <span class="skill-tag">Scikit-learn</span>
-                    <span class="skill-tag">Model Evaluation</span>
-                    <span class="skill-tag">Data Preprocessing</span>
-                </div>
-
-                <div class="card">
-                    <h3>Business Intelligence</h3>
-                    <span class="skill-tag">Power BI</span>
-                    <span class="skill-tag">DAX</span>
-                    <span class="skill-tag">Power Query</span>
-                    <span class="skill-tag">Tableau</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Featured Projects</h2>
-
-            <div class="projects">
-                <div class="card">
-                    <h3>Asia Cup 2025 Cricket Dashboard</h3>
-                    <p>
-                        An interactive Power BI dashboard exploring
-                        cricket statistics, team performance,
-                        batting averages and bowling economy.
-                    </p>
-                    <a href="https://github.com/AttaUllahHub"
-                       class="btn" target="_blank"
-                       rel="noopener noreferrer">
-                        View GitHub
-                    </a>
-                </div>
-
-                <div class="card">
-                    <h3>Machine Learning Explainability</h3>
-                    <p>
-                        An explainability project exploring model
-                        predictions and feature importance using
-                        Python, Scikit-learn, SHAP and Plotly.
-                    </p>
-                    <a href="https://github.com/AttaUllahHub"
-                       class="btn" target="_blank"
-                       rel="noopener noreferrer">
-                        View GitHub
-                    </a>
-                </div>
-
-                <div class="card">
-                    <h3>Traffic Violation Detection</h3>
-                    <p>
-                        An ongoing project idea using Deep Learning
-                        and Computer Vision to detect traffic
-                        violations and analyze traffic patterns.
-                    </p>
-                    <a href="https://github.com/AttaUllahHub"
-                       class="btn" target="_blank"
-                       rel="noopener noreferrer">
-                        View GitHub
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="education">
-            <h2>Education</h2>
-
-            <div class="card">
-                <h3>Bachelor's in Data Science</h3>
-                <p>
-                    Government College University Faisalabad (GCUF)
-                </p>
-                <p>2023 – Expected 2027</p>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <h2>Let's Connect</h2>
-
-            <p>
-                I am interested in Data Science, Data Analytics,
-                Machine Learning and internship opportunities.
-            </p>
-
-            <a href="https://github.com/AttaUllahHub"
-               class="btn" target="_blank"
-               rel="noopener noreferrer">
-                GitHub Profile
+          <div class="button-group">
+            <a class="btn btn-primary" href="#projects">
+              Explore My Projects ↗
             </a>
-
-            <a href="https://www.linkedin.com/"
-               class="btn btn-outline" target="_blank"
-               rel="noopener noreferrer">
-                LinkedIn
+            <a class="btn btn-secondary"
+               href="https://github.com/AttaUllahHub"
+               target="_blank" rel="noopener noreferrer">
+              GitHub Profile ↗
             </a>
-        </section>
-    </main>
+          </div>
 
-    <footer>
-        <p>
-            &copy; 2026 Atta Ullah | Data Science Portfolio
+          <div class="hero-tags">
+            <span>Python</span>
+            <span>SQL</span>
+            <span>Machine Learning</span>
+            <span>Power BI</span>
+            <span>Data Analytics</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Get to know me</div>
+          <h2>About <span class="accent">Me</span></h2>
+          <p class="section-intro">
+            Learning, building, and growing in the world of data.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="panel">
+            <h3>My Data Science Journey</h3>
+            <p>
+              I'm pursuing a Bachelor's degree in Data Science at GCUF.
+              My interests include data analysis, statistical thinking,
+              machine learning, data visualization, and deep learning.
+            </p>
+            <p>
+              I am developing my technical skills through coursework,
+              hands-on practice, and portfolio projects. My goal is to
+              apply data science to real-world industry problems and
+              continue growing as a data professional.
+            </p>
+          </div>
+
+          <div class="panel">
+            <h3>Areas of Interest</h3>
+            <ul class="focus-list">
+              <li>Exploratory Data Analysis</li>
+              <li>Machine Learning & AI</li>
+              <li>Business Intelligence</li>
+              <li>Data Visualization & Storytelling</li>
+              <li>Computer Vision</li>
+              <li>Practical Industry Projects</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">What I work with</div>
+          <h2>Technical <span class="accent">Skills</span></h2>
+          <p class="section-intro">
+            Tools and technologies I use or am learning through practice
+            and academic projects.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <div class="skill-icon" aria-hidden="true">⌨️</div>
+            <h3>Programming</h3>
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag">R</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon" aria-hidden="true">📊</div>
+            <h3>Data Analysis</h3>
+            <div class="tag-list">
+              <span class="tag">Pandas</span>
+              <span class="tag">NumPy</span>
+              <span class="tag">Excel</span>
+              <span class="tag">Statistics</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon" aria-hidden="true">🤖</div>
+            <h3>Machine Learning</h3>
+            <div class="tag-list">
+              <span class="tag">Scikit-learn</span>
+              <span class="tag">Model Evaluation</span>
+              <span class="tag">SHAP</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon" aria-hidden="true">📈</div>
+            <h3>Business Intelligence</h3>
+            <div class="tag-list">
+              <span class="tag">Power BI</span>
+              <span class="tag">DAX</span>
+              <span class="tag">Power Query</span>
+              <span class="tag">Tableau</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon" aria-hidden="true">🧠</div>
+            <h3>AI & Deep Learning</h3>
+            <div class="tag-list">
+              <span class="tag">Neural Networks</span>
+              <span class="tag">Computer Vision</span>
+              <span class="tag">Model Explainability</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon" aria-hidden="true">🛠️</div>
+            <h3>Tools & Workflow</h3>
+            <div class="tag-list">
+              <span class="tag">Jupyter</span>
+              <span class="tag">Google Colab</span>
+              <span class="tag">Git</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">Streamlit</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Selected work</div>
+          <h2>Featured <span class="accent">Projects</span></h2>
+          <p class="section-intro">
+            A selection of my data analytics, visualization, and machine
+            learning work. Open GitHub to explore available source code.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="project-number">PROJECT 01</div>
+            <h3>Asia Cup 2025 Cricket Dashboard</h3>
+            <p>
+              An interactive Power BI dashboard exploring team performance,
+              wickets, batting averages, bowling economy, and tournament insights.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Power BI</span>
+              <span class="tag">DAX</span>
+              <span class="tag">Data Visualization</span>
+            </div>
+            <a class="project-link"
+               href="https://github.com/AttaUllahHub"
+               target="_blank" rel="noopener noreferrer">
+              Explore on GitHub ↗
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-number">PROJECT 02</div>
+            <h3>ML Explainability Dashboard</h3>
+            <p>
+              A machine learning project using model explainability and
+              interactive visualizations to help users understand model
+              predictions and feature contributions.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">Scikit-learn</span>
+              <span class="tag">SHAP</span>
+              <span class="tag">Streamlit</span>
+            </div>
+            <a class="project-link"
+               href="https://github.com/AttaUllahHub"
+               target="_blank" rel="noopener noreferrer">
+              Explore on GitHub ↗
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-number">PROJECT 03</div>
+            <h3>Expense Tracker Dashboard</h3>
+            <p>
+              A dashboard project focused on organizing expense information,
+              tracking spending patterns, and presenting financial summaries
+              in an easy-to-understand format.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Python</span>
+              <span class="tag">Data Analysis</span>
+              <span class="tag">Dashboard</span>
+            </div>
+            <a class="project-link"
+               href="https://github.com/AttaUllahHub"
+               target="_blank" rel="noopener noreferrer">
+              Explore on GitHub ↗
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-number">PROJECT 04 · IN DEVELOPMENT</div>
+            <h3>AI Traffic Violation Detection</h3>
+            <p>
+              An academic project direction focused on exploring computer
+              vision and deep learning for detecting traffic rule violations
+              and generating useful traffic analytics.
+            </p>
+            <div class="tag-list">
+              <span class="tag">Deep Learning</span>
+              <span class="tag">Computer Vision</span>
+              <span class="tag">Python</span>
+            </div>
+            <a class="project-link"
+               href="https://github.com/AttaUllahHub"
+               target="_blank" rel="noopener noreferrer">
+              View GitHub Profile ↗
+            </a>
+          </article>
+
+        </div>
+
+        <p class="project-note">
+          Note: Project links currently open my GitHub profile. Replace
+          them with each project's repository or live demo when available.
+          Keep project descriptions accurate to your actual implementation.
         </p>
-    </footer>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">My academic background</div>
+          <h2><span class="accent">Education</span></h2>
+        </div>
+
+        <div class="panel">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">2023 – Expected 2027</div>
+              <h3>Bachelor's Degree in Data Science</h3>
+              <p>Government College University Faisalabad (GCUF)</p>
+              <p>
+                Relevant areas: statistics, programming, data analytics,
+                machine learning, deep learning, and computer science.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">2021 – 2023</div>
+              <h3>FSc in Computer Science</h3>
+              <p>Completed in 2023</p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">Completed 2021</div>
+              <h3>Matriculation</h3>
+              <p>Completed in 2021</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="eyebrow">Let's connect</div>
+          <h2>Have a project in <span class="accent">mind?</span></h2>
+          <p>
+            I'm interested in data science projects, learning opportunities,
+            collaboration, and connecting with people working in data and AI.
+            Feel free to explore my work or connect with me.
+          </p>
+
+          <div class="contact-links">
+            <a class="btn btn-primary"
+               href="https://github.com/AttaUllahHub"
+               target="_blank" rel="noopener noreferrer">
+              GitHub ↗
+            </a>
+
+            <!-- Replace the placeholder below with your LinkedIn profile -->
+            <a class="btn btn-secondary"
+               href="https://www.linkedin.com/"
+               target="_blank" rel="noopener noreferrer">
+              LinkedIn ↗
+            </a>
+
+            <!-- Add your email after replacing this placeholder -->
+            <a class="btn btn-secondary"
+               href="#contact"
+               onclick="return false;">
+              Email: Add Your Email
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Atta Ullah. Built with HTML & CSS.</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    // Close menu after selecting a section
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // Automatically update the footer year
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 
 </body>
 </html>
+
